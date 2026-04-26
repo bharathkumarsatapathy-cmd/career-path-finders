@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(to right, #1b8aebec, #f911da);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+/* Title */
+.title {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.subtitle {
+    color: #eee;
+    margin-bottom: 30px;
+}
+
+/* Card */
+.card {
+    border-radius: 15px;
+    border: none;
+}
+
+/* Inputs */
+input, select {
+    border-radius: 10px !important;
+    padding: 10px;
+}
+
+/* Button */
+button {
+    border-radius: 10px !important;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #5a67d8 !important;
+}
+
+/* Icons inside inputs */
+.icon {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 12px;
+    color: #666;
+}
+
+.mb-3 {
+    position: relative;
+}
+
+.mb-3 input,
+.mb-3 select {
+    padding-left: 35px;
+}
+
+/* Animation: fade */
+.animate-fade {
+    animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation: pop */
+.animate-pop {
+    animation: popIn 0.8s ease-out;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* List items */
+.list-group-item {
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #0dfeaa;
+}

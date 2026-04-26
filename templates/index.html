@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Path Finder</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container text-center mt-5">
+
+    <!-- Hero Section -->
+    <h1 class="title animate-pop">
+        🚀 Career Path Finder
+    </h1>
+
+    <p class="subtitle">
+        Find your perfect career based on your skills & interests
+    </p>
+
+    <!-- Form Card -->
+    <form action="/result" method="POST" class="card p-4 shadow animate-fade">
+
+        <div class="mb-3">
+            <i class="fa fa-graduation-cap icon"></i>
+            <input class="form-control" type="text" name="qualification" placeholder="Qualification (B.Tech, Diploma)" required>
+        </div>
+
+        <div class="mb-3">
+            <i class="fa fa-briefcase icon"></i>
+            <select class="form-control" name="sector">
+                <option>Private</option>
+                <option>Government</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <i class="fa fa-lightbulb icon"></i>
+            <input class="form-control" type="text" name="interest" placeholder="Interest (coding, design)" required>
+        </div>
+
+        <button class="btn btn-primary w-100">
+            <i class="fa fa-search"></i> Find Career
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
