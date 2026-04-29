@@ -64,26 +64,33 @@ def result():
     qualification = request.form['qualification'].lower()
     sector = request.form['sector']
     interest = request.form.get('interest', '').lower()
-
+    skills = request.form['skills'].lower()
     jobs = []
+    advice = ""
+    if "python" in skills or "coding" in interest:
+        jobs.append("Software Developer")
+        jobs.append("Backend Developer")
+        advice = "Improve DSA and build real-world projects."
 
-    if "b.tech" in qualification or "btech" in qualification:
-        if sector == "Private":
-            if "coding" in interest:
-                jobs = ["Software Developer", "Web Developer", "AI Engineer"]
-            elif "design" in interest:
-                jobs = ["UI/UX Designer", "Graphic Designer"]
-            else:
-                jobs = ["Data Analyst", "IT Support"]
-        else:
-            jobs = ["GATE", "PSU Jobs", "UPSC"]
+    elif "design" in interest:
+        jobs.append("UI/UX Designer")
+        jobs.append("Graphic Designer")
+        advice = "Learn Figma and improve creative portfolio."
 
-    elif "diploma" in qualification:
-        jobs = ["Technician", "Junior Engineer"]
+    elif "communication" in skills:
+        jobs.append("HR Manager")
+        jobs.append("Marketing Executive")
+        advice = "Develop leadership and public speaking skills."
+
+    elif sector == "Government":
+        jobs.append("UPSC")
+        jobs.append("SSC")
+        jobs.append("Banking")
+        advice = "Focus on aptitude, reasoning, and current affairs."
 
     else:
-        jobs = ["Explore general career options"]
-    print("form submitted")
+        jobs.append("Explore multiple career domains")
+        advice = "Try improving technical and communication skills."
     return render_template('result.html', jobs=jobs)
 
 def init_db():
